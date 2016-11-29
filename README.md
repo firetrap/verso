@@ -10,7 +10,7 @@
 #### How do I add Verso to my project?
 ```
 dependencies {
-		compile 'com.github.firetrap:verso:1.0.0'
+		compile 'com.github.firetrap:verso:1.0.1'
 	}
 ```
 
