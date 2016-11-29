@@ -43,7 +43,7 @@ import static java.lang.Math.toRadians;
  */
 
 public class GeoInfo extends KDNodeComparator<GeoInfo> {
-    private String name;
+    private String cityName;
     private boolean majorPlace; // Major or minor place
     private double latitude;
     private double longitude;
@@ -53,7 +53,7 @@ public class GeoInfo extends KDNodeComparator<GeoInfo> {
 
     GeoInfo(String data) {
         String[] names = data.split("\t");
-        name = names[1];
+        cityName = names[1];
         majorPlace = names[6].equals("P");
         latitude = Double.parseDouble(names[4]);
         longitude = Double.parseDouble(names[5]);
@@ -63,7 +63,7 @@ public class GeoInfo extends KDNodeComparator<GeoInfo> {
     }
 
     GeoInfo(Double latitude, Double longitude) {
-        name = countryCode = "Search";
+        cityName = countryCode = "Search";
         this.latitude = latitude;
         this.longitude = longitude;
         setPoint();
@@ -81,8 +81,8 @@ public class GeoInfo extends KDNodeComparator<GeoInfo> {
         return locale.getDisplayCountry();
     }
 
-    public String getName() {
-        return name;
+    public String getCityName() {
+        return cityName;
     }
 
     public boolean isMajorPlace() {
@@ -107,7 +107,7 @@ public class GeoInfo extends KDNodeComparator<GeoInfo> {
 
     @Override
     public String toString() {
-        return name;
+        return cityName;
     }
 
     @Override
